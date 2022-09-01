@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.2+commit.661d1103"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/libraries/merkle.sol": "Merkle"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/libraries/merkle.sol": {
+			"keccak256": "0x3e85d8cb33c8adf13141504904caa38e08b8764fac38af45ac819a6de77b9471",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://56b3e46c64aa18649d34158884c0f2ffd0646944c831a984646da74ad7cdcadb",
+				"dweb:/ipfs/QmUKsEx2xoXiQdt24gZyRKxYHAY8o149S3uQSV3Kv1xxZa"
+			]
+		}
+	},
+	"version": 1
+}
