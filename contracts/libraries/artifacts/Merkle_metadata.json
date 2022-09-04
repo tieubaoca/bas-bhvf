@@ -1,10 +1,105 @@
 {
 	"compiler": {
-		"version": "0.8.2+commit.661d1103"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"name": "emptyHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"name": "getSplitPoint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "leaves",
+						"type": "bytes[]"
+					}
+				],
+				"name": "hashFromByteSlices",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "left",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "right",
+						"type": "bytes32"
+					}
+				],
+				"name": "innerHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "leafHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -20,24 +115,24 @@
 		"compilationTarget": {
 			"contracts/libraries/merkle.sol": "Merkle"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"contracts/libraries/merkle.sol": {
-			"keccak256": "0x3e85d8cb33c8adf13141504904caa38e08b8764fac38af45ac819a6de77b9471",
+			"keccak256": "0x8aeb7c2be0f90c532a95ee5b7240b82f79733907847995aa4206e34e80bb05e6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://56b3e46c64aa18649d34158884c0f2ffd0646944c831a984646da74ad7cdcadb",
-				"dweb:/ipfs/QmUKsEx2xoXiQdt24gZyRKxYHAY8o149S3uQSV3Kv1xxZa"
+				"bzz-raw://452b21b013e625b05af37a9282d70db64009e4e850ba5816ccb7dd6fe7918fbb",
+				"dweb:/ipfs/QmYGigRHVrquavbLoyFic5u3yhoWCCghuvwweta3YUF4ND"
 			]
 		}
 	},

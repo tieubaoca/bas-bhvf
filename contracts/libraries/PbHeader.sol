@@ -9,7 +9,7 @@ library PbHeader {
     struct Header {
         Version version;   // tag: 1
         string chainId;   // tag: 2
-        uint256 height;   // tag: 3
+        uint64 height;   // tag: 3
         Timestamp time;   // tag: 4
         BlockID lastBlockId;   // tag: 5
         bytes lastCommitHash;   // tag: 6
@@ -23,7 +23,7 @@ library PbHeader {
         bytes proposerAddress;   // tag: 14
     } // end struct Header
 
-    function decHeader(bytes memory raw) public pure returns (Header memory m) {
+    function decHeader(bytes memory raw) internal pure returns (Header memory m) {
         Pb.Buffer memory buf = Pb.fromBytes(raw);
 
         uint tag;
@@ -38,7 +38,7 @@ library PbHeader {
                 m.chainId = string(buf.decBytes());
             }
             else if (tag == 3) {
-                m.height = uint256(buf.decVarint());
+                m.height = uint64(buf.decVarint());
             }
             else if (tag == 4) {
                 m.time = decTimestamp(buf.decBytes());
@@ -78,11 +78,11 @@ library PbHeader {
     } // end decoder Header
 
     struct Version {
-        uint256 block;   // tag: 1
-        uint256 app;   // tag: 2
+        uint64 block;   // tag: 1
+        uint64 app;   // tag: 2
     } // end struct Version
 
-    function decVersion(bytes memory raw) public pure returns (Version memory m) {
+    function decVersion(bytes memory raw) internal pure returns (Version memory m) {
         Pb.Buffer memory buf = Pb.fromBytes(raw);
 
         uint tag;
@@ -91,10 +91,10 @@ library PbHeader {
             (tag, wire) = buf.decKey();
             if (false) {} // solidity has no switch/case
             else if (tag == 1) {
-                m.block = uint256(buf.decVarint());
+                m.block = uint64(buf.decVarint());
             }
             else if (tag == 2) {
-                m.app = uint256(buf.decVarint());
+                m.app = uint64(buf.decVarint());
             }
             else { buf.skipValue(wire); } // skip value of unknown tag
         }
@@ -105,7 +105,7 @@ library PbHeader {
         PartSetHeader partSetHeader;   // tag: 2
     } // end struct BlockID
 
-    function decBlockID(bytes memory raw) public pure returns (BlockID memory m) {
+    function decBlockID(bytes memory raw) internal pure returns (BlockID memory m) {
         Pb.Buffer memory buf = Pb.fromBytes(raw);
 
         uint tag;
@@ -128,7 +128,7 @@ library PbHeader {
         bytes hash;   // tag: 2
     } // end struct PartSetHeader
 
-    function decPartSetHeader(bytes memory raw) public pure returns (PartSetHeader memory m) {
+    function decPartSetHeader(bytes memory raw) internal pure returns (PartSetHeader memory m) {
         Pb.Buffer memory buf = Pb.fromBytes(raw);
 
         uint tag;
@@ -147,11 +147,11 @@ library PbHeader {
     } // end decoder PartSetHeader
 
     struct Timestamp {
-        uint256 second;   // tag: 1
-        uint256 nano;   // tag: 2
+        uint64 second;   // tag: 1
+        uint64 nano;   // tag: 2
     } // end struct Timestamp
 
-    function decTimestamp(bytes memory raw) public pure returns (Timestamp memory m) {
+    function decTimestamp(bytes memory raw) internal pure returns (Timestamp memory m) {
         Pb.Buffer memory buf = Pb.fromBytes(raw);
 
         uint tag;
@@ -160,10 +160,10 @@ library PbHeader {
             (tag, wire) = buf.decKey();
             if (false) {} // solidity has no switch/case
             else if (tag == 1) {
-                m.second = uint256(buf.decVarint());
+                m.second = uint64(buf.decVarint());
             }
             else if (tag == 2) {
-                m.nano = uint256(buf.decVarint());
+                m.nano = uint64(buf.decVarint());
             }
             else { buf.skipValue(wire); } // skip value of unknown tag
         }

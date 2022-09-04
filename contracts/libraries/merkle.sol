@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 library Merkle {
     function hashFromByteSlices(bytes[] memory leaves)
-        internal
+        public
         pure
         returns (bytes32)
     {
@@ -29,28 +29,37 @@ library Merkle {
         }
     }
 
-    function emptyHash() internal pure returns (bytes32) {
+    function emptyHash() public pure returns (bytes32) {
         return sha256(new bytes(0));
     }
 
-    function leafHash(bytes memory data) internal pure returns (bytes32) {
+    function leafHash(bytes memory data) public pure returns (bytes32) {
         return sha256(abi.encodePacked(uint8(0), data));
     }
 
     function innerHash(bytes32 left, bytes32 right)
-        internal
+        public
         pure
         returns (bytes32)
     {
         return sha256(abi.encodePacked(uint8(1), left, right));
     }
 
-    function getSplitPoint(uint256 length) internal pure returns (uint256) {
+    function getSplitPoint(uint256 length) public pure returns (uint256) {
         uint256 splitPoint = 0;
+        uint256 originLength = length;
+        if (length == 1){
+            return 0;
+        }
         while (length > 1) {
             length = length / 2;
             splitPoint++;
         }
-        return 2**splitPoint;
+        if ((2**splitPoint) < originLength){
+            return 2**splitPoint;
+        } else {
+            return 2**(splitPoint - 1);
+        }
+
     }
 }

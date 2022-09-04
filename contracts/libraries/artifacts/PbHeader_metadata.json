@@ -1,286 +1,10 @@
 {
 	"compiler": {
-		"version": "0.8.2+commit.661d1103"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [
-			{
-				"inputs": [
-					{
-						"internalType": "bytes",
-						"name": "raw",
-						"type": "bytes"
-					}
-				],
-				"name": "decBlockID",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "bytes",
-								"name": "hash",
-								"type": "bytes"
-							},
-							{
-								"components": [
-									{
-										"internalType": "uint32",
-										"name": "total",
-										"type": "uint32"
-									},
-									{
-										"internalType": "bytes",
-										"name": "hash",
-										"type": "bytes"
-									}
-								],
-								"internalType": "struct PbHeader.PartSetHeader",
-								"name": "partSetHeader",
-								"type": "tuple"
-							}
-						],
-						"internalType": "struct PbHeader.BlockID",
-						"name": "m",
-						"type": "tuple"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "bytes",
-						"name": "raw",
-						"type": "bytes"
-					}
-				],
-				"name": "decHeader",
-				"outputs": [
-					{
-						"components": [
-							{
-								"components": [
-									{
-										"internalType": "uint256",
-										"name": "block",
-										"type": "uint256"
-									},
-									{
-										"internalType": "uint256",
-										"name": "app",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct PbHeader.Version",
-								"name": "version",
-								"type": "tuple"
-							},
-							{
-								"internalType": "string",
-								"name": "chainId",
-								"type": "string"
-							},
-							{
-								"internalType": "uint256",
-								"name": "height",
-								"type": "uint256"
-							},
-							{
-								"components": [
-									{
-										"internalType": "uint256",
-										"name": "second",
-										"type": "uint256"
-									},
-									{
-										"internalType": "uint256",
-										"name": "nano",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct PbHeader.Timestamp",
-								"name": "time",
-								"type": "tuple"
-							},
-							{
-								"components": [
-									{
-										"internalType": "bytes",
-										"name": "hash",
-										"type": "bytes"
-									},
-									{
-										"components": [
-											{
-												"internalType": "uint32",
-												"name": "total",
-												"type": "uint32"
-											},
-											{
-												"internalType": "bytes",
-												"name": "hash",
-												"type": "bytes"
-											}
-										],
-										"internalType": "struct PbHeader.PartSetHeader",
-										"name": "partSetHeader",
-										"type": "tuple"
-									}
-								],
-								"internalType": "struct PbHeader.BlockID",
-								"name": "lastBlockId",
-								"type": "tuple"
-							},
-							{
-								"internalType": "bytes",
-								"name": "lastCommitHash",
-								"type": "bytes"
-							},
-							{
-								"internalType": "bytes",
-								"name": "dataHash",
-								"type": "bytes"
-							},
-							{
-								"internalType": "bytes",
-								"name": "validatorsHash",
-								"type": "bytes"
-							},
-							{
-								"internalType": "bytes",
-								"name": "nextValidatorsHash",
-								"type": "bytes"
-							},
-							{
-								"internalType": "bytes",
-								"name": "consensusHash",
-								"type": "bytes"
-							},
-							{
-								"internalType": "bytes",
-								"name": "appHash",
-								"type": "bytes"
-							},
-							{
-								"internalType": "bytes",
-								"name": "lastResultsHash",
-								"type": "bytes"
-							},
-							{
-								"internalType": "bytes",
-								"name": "evidenceHash",
-								"type": "bytes"
-							},
-							{
-								"internalType": "bytes",
-								"name": "proposerAddress",
-								"type": "bytes"
-							}
-						],
-						"internalType": "struct PbHeader.Header",
-						"name": "m",
-						"type": "tuple"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "bytes",
-						"name": "raw",
-						"type": "bytes"
-					}
-				],
-				"name": "decPartSetHeader",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "uint32",
-								"name": "total",
-								"type": "uint32"
-							},
-							{
-								"internalType": "bytes",
-								"name": "hash",
-								"type": "bytes"
-							}
-						],
-						"internalType": "struct PbHeader.PartSetHeader",
-						"name": "m",
-						"type": "tuple"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "bytes",
-						"name": "raw",
-						"type": "bytes"
-					}
-				],
-				"name": "decTimestamp",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "second",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "nano",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct PbHeader.Timestamp",
-						"name": "m",
-						"type": "tuple"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "bytes",
-						"name": "raw",
-						"type": "bytes"
-					}
-				],
-				"name": "decVersion",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "block",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "app",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct PbHeader.Version",
-						"name": "m",
-						"type": "tuple"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			}
-		],
+		"abi": [],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -296,13 +20,13 @@
 		"compilationTarget": {
 			"contracts/libraries/PbHeader.sol": "PbHeader"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
@@ -316,10 +40,10 @@
 			]
 		},
 		"contracts/libraries/PbHeader.sol": {
-			"keccak256": "0xd3cde440aa23f21192738fdb7dd1f44b518f690cd1e56aa4ed3cc21f1b215243",
+			"keccak256": "0xf92f20ac259d461cdf853f547a01df5e4665dc837ae995a1ad4f4ab0ff4805cd",
 			"urls": [
-				"bzz-raw://b13b4e49f8a798fbc470d4e590193557a7340e9c7f3b83d2f6591b3b35eaf130",
-				"dweb:/ipfs/QmdMaoyG2wexFLunsRfhCRn6GbsRd9QS6gGTZdWvsowh4L"
+				"bzz-raw://664c2a74decbe8cfd7fe45b9b4e4c12ab6f037a45e798aaa4b3663e34b45c85b",
+				"dweb:/ipfs/QmT5z1ELKaSqDrdGBV6Cr8cYLFsU2hjFkJeqFWhkDJUDVK"
 			]
 		}
 	},
